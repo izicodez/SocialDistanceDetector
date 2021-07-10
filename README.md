@@ -11,10 +11,10 @@ pip install -r requirements.txt
 ```
 If you are running the client on Windows, comment out the speak function
 ```
-'''
+
 def speak():
   ...
-'''
+
 ```
 Once done installing dependencies, open the whatsapp.py file.
 
