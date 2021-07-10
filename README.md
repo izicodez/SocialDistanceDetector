@@ -7,7 +7,5 @@ Using computer vision we detect if 2 or more people are social distancing or not
 Install all the required dependencies from the requirements.txt file
 
 ```
-function test() {
-  console.log("notice the blank line before this function?");
-}
+pip install -r requirements.txt
 ```
