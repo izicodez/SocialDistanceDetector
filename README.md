@@ -9,6 +9,6 @@ Install all the required dependencies from the requirements.txt file
 ```
 pip install -r requirements.txt
 ```
-This program uses yolov3 tiny, but you can install the real version from their website:
+This program downloads only the yolov3 tiny, but you can install yolov3 from their website:
 
 ``` https://pjreddie.com/darknet/yolo ```
