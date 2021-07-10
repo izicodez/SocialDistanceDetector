@@ -1,1 +1,10 @@
-opencv-python==4.5.1
+
+opencv-python
+datetime
+imutils
+stopwatch
+time
+selenium
+webdriver
+ChromeDriverManager
+pyttsx3
