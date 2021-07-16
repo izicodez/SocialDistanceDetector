@@ -19,7 +19,7 @@ else:
 '''
 def speak(audio): # it will speak
     engine = pyttsx3.init()
-    engine.setProperty('rate', 180)
+    engine.setProperty('rate', 130 )
 
     voices = engine.getProperty('voices')
     engine.setProperty('voice', voices[2].id)
@@ -32,7 +32,7 @@ def sendData():
     ###
 
     VIOLATION_COUNT_SETTING = 2
-    VIOLATION_TIME_SETTING = 30  # Main message time
+    VIOLATION_TIME_SETTING = 6  # Main message time
     VIOLATION_TIME_SETTING_2 = 10  # Spam him after .. minutes
     stop.start()
     ###
@@ -54,13 +54,14 @@ def sendData():
             a = pickle.dumps(frame)
             message = struct.pack("Q", len(a)) + a
             client_socket.sendall(message)
-            print(stop.elapsed)
+            #print(stop.elapsed)
 #https://stackoverflow.com/questions/16745409/what-does-pythons-socket-recv-return-for-non-blocking-sockets-if-no-data-is-r
 
             msg = client_socket.recv(1024).decode()
 
             if (msg == "Violation"):
-                speak("Please Maintain Social Distancing")
+                speak("You are requested to Please Maintain Social Distancing")
+                print('violation')
 
         except Exception as e:
             print('VIDEO FINISHED!', e)
@@ -80,10 +81,16 @@ def connecttoServer():
 
 while True:
     try:
-        vid = cv2.VideoCapture('aa.mp4')
+        try:
+            vid = cv2.VideoCapture(0)
+            if vid is None or not vid.isOpened():
+                vid = cv2.VideoCapture(1)
+        except Exception as ex:
+            print(ex)
+            
         client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         # host_ip = '127.0.0.1' # Here according to your server ip write the address
-        host_ip = '192.168.1.234'
+        host_ip = '192.168.152.99'
         port = 9999
         if vid.isOpened():
             connecttoServer()
