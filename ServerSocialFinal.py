@@ -45,14 +45,14 @@ host_name = socket.gethostname()
 #host_ip = socket.gethostbyname(host_name)
 #host_ip = '127.0.0.1'
 #host_ip='192.168.0.40'
-host_ip='192.168.0.40'
+host_ip='192.168.1.248'
 print('HOST IP:', host_ip)
 port = 9999
 socket_address = (host_ip, port)
 server_socket.bind(socket_address)
 server_socket.listen()
 print("Listening at", socket_address)
-
+count =0
 
 def show_client(addr, client_socket, lock):
     # construct the argument parse and parse the arguments
@@ -206,7 +206,7 @@ def show_client(addr, client_socket, lock):
                 if args["display"] > 0:
                     #show the output frame
                     id = ROOM_NAME
-                    name = 'Frame_' + str(id)
+                    name = 'Frame_' + str(id) + str(count)
                     cv2.imshow(name, frame)
                     key = cv2.waitKey(1) & 0xFF
 
@@ -326,6 +326,7 @@ def show_client(addr, client_socket, lock):
 lock=threading.Lock()
 while True:
     client_socket, addr = server_socket.accept()
+    count +=1
     #id = random.randint(1,1000)
     thread = threading.Thread(target=show_client, args=(addr, client_socket, lock))
     thread.start()
