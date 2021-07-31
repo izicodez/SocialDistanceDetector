@@ -1,0 +1,9 @@
+opencv-python
+datetime
+imutils
+python-stopwatch
+time
+selenium
+webdriver
+ChromeDriverManager
+pyttsx3
