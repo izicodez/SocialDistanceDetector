@@ -9,7 +9,7 @@ Install all the required dependencies from the requirements.txt file
 ```
 pip install -r requirements.txt
 ```
-If you are running the client on Windows, comment out the speak function
+If you are running the client on Windows, comment out the speak function on the client.py file
 ```
 
 def speak():
