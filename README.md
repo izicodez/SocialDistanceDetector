@@ -2,6 +2,6 @@
 
 # Change log
 
- # 31/7 Refactored code
+ * 31/7 Refactored code
  
- # 2/8 Test with Cumulocity, data transfer
+ * 2/8 Test with Cumulocity, data transfer
