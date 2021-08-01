@@ -17,7 +17,7 @@ from stopwatch import Stopwatch, profile
 
 #Formerly named nomi_izi
 from sd_utils import social_distancing_config as config
-from sd_utils.detection import detect_people
+from sd_utils.detection import detect_boxes
 # Commented out to make testing easier
 #from whatsapp import send_violation_picture,send_message
 
@@ -140,7 +140,7 @@ def show_client(addr, client_socket, lock):
                 frame = imutils.resize(frame, width=700)
 
 
-                results = detect_people(frame, net, ln,
+                results = detect_boxes(frame, net, ln,
                                         personIdx=LABELS.index('person'))
 
                 #set of violations indexes, MIGHT wanna double check data structure
