@@ -89,8 +89,8 @@ while True:
             print(ex)
             
         client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        # host_ip = '127.0.0.1' # Here according to your server ip write the address
-        host_ip = '192.168.152.99'
+        host_ip = '127.0.0.1' # Here according to your server ip write the address
+        #host_ip = '192.168.152.99'
         port = 9999
         if vid.isOpened():
             connecttoServer()
