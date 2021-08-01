@@ -17,15 +17,15 @@ if camera == True:
 else:
     vid = cv2.VideoCapture('videos/mario.mp4')
 '''
-def speak(audio): # it will speak
-    engine = pyttsx3.init()
-    engine.setProperty('rate', 130 )
+# def speak(audio): # it will speak
+#     engine = pyttsx3.init()
+#     engine.setProperty('rate', 130 )
 
-    voices = engine.getProperty('voices')
-    engine.setProperty('voice', voices[2].id)
+#     voices = engine.getProperty('voices')
+#     engine.setProperty('voice', voices[2].id)
 
-    engine.say(audio) # say the given audio
-    engine.runAndWait() #Without this command, speech will not be audible to us.
+#     engine.say(audio) # say the given audio
+#     engine.runAndWait() #Without this command, speech will not be audible to us.
 
 
 def sendData():
@@ -60,7 +60,7 @@ def sendData():
             msg = client_socket.recv(1024).decode()
 
             if (msg == "Violation"):
-                speak("You are requested to Please Maintain Social Distancing")
+                #speak("You are requested to Please Maintain Social Distancing")
                 print('violation')
 
         except Exception as e:
