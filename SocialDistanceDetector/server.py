@@ -18,6 +18,7 @@ from stopwatch import Stopwatch, profile
 #Formerly named nomi_izi
 from sd_utils import social_distancing_config as config
 from sd_utils.detection import detect_boxes
+from cumulocity_mqtt import *
 # Commented out to make testing easier
 #from whatsapp import send_violation_picture,send_message
 
@@ -168,6 +169,10 @@ def show_client(addr, client_socket, lock):
                     cv2.circle(frame, (cX, cY), 5, color, 1)
 
                 violation_count= len(violate)
+
+                # Send violations number Cumolicity
+                send_measurement(violation_count)
+
                 text = f'Social Distancing Violations: {violation_count}'
                 cv2.putText(frame, text, (10, frame.shape[0] - 25),
                             cv2.FONT_HERSHEY_SIMPLEX, 0.85, (0, 0, 255), 3)
