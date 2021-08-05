@@ -1,8 +1,7 @@
-
 opencv-python
 datetime
 imutils
-stopwatch
+python-stopwatch
 time
 selenium
 webdriver

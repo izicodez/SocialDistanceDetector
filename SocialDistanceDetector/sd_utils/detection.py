@@ -4,7 +4,7 @@ from .social_distancing_config import MIN_CONF
 import numpy as np
 import cv2
 
-def detect_people(frame, net, ln, personIdx=0):
+def detect_boxes(frame, net, ln, personIdx = 0):
 	# grab the dimensions of the frame and  initialize the list of
 	# results
 	(H, W) = frame.shape[:2]
